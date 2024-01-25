@@ -1,5 +1,53 @@
-<ol class="relative border-s border-gray-200 dark:border-gray-700">
-  <li class="mb-10 ms-6">
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "2021-actualidad",
+    title: "Programador Freelance",
+    company: "Freelance",
+    location: "Bogotá, Colombia",
+    description:
+      "Consultoria en ingeniería, prototipos e impresión 3D,  creación de aplicaciones y sitios web según requerimientos.",
+  },
+  {
+    date: "2019-2021",
+    title: "Gerente de ingeniería electrónica",
+    company: "VC999 Packaging Systems Colombia S.A.S.",
+    location: "Bogotá, Colombia",
+    description:
+      "Líder técnico, diseñador y director del equipo de programación, encargado del desarrollo de interfaces de usuario, lógica de funcionamiento de maquinaria y sistemas de gestión.",
+  },
+  {
+    date: "2017-2019",
+    title: "Ingeniero de proyectos",
+    company: "VC999 Packaging Systems Colombia S.A.S.",
+    location: "Bogotá, Colombia",
+    description:
+      "Desarrollador encargado de la programación, implementación y puesta en marcha de los equipos , así como del diseño de prototipos y soluciones de empaque.",
+  },
+  {
+    date: "2016-2017",
+    title: "Ingeniero Junior",
+    company: "Teppack Colombia LTDA",
+    location: "Bogotá, Colombia",
+    description:
+      "Ingeniero multidiciplinario encargado de dar soporte a las áreas de mecánica y electrónica.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
+
+<!--  <li class="mb-10 ms-6">
     <span
       class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900"
     >
@@ -20,7 +68,8 @@
     >
       Flowbite Application UI v2.0.0 <span
         class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3"
-        >Latest</span>
+        >Latest</span
+      >
     </h3>
     <time
       class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
@@ -104,5 +153,4 @@
       Get started with dozens of web components and interactive elements built
       on top of Tailwind CSS.
     </p>
-  </li>
-</ol>
+  </li> -->
