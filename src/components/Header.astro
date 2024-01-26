@@ -1,9 +1,70 @@
-<header class="flex justify-center items-center py-5 w-3/4 mx-auto">
-  <nav class="flex flex-row gap-x-10 opacity-80 text-white text-xl">
-    <a href="#top">Inicio</a>
-    <a href="#experience">Experiencia</a>
-    <a href="#projects">Proyectos</a>
-    <a href="#about">Sobre mi</a>
-    <a href="#contact">Contacto</a>
-  </nav>
+---
+import PerfilIcon from "../icons/Perfil.astro";
+import CodeIcon from "../icons/Code.astro";
+import BlogIcon from "../icons/Blog.astro";
+import MessageIcon from "../icons/Message.astro";
+import { ThemeChanger } from "./ThemeChanger";
+---
+
+<header class="md:flex">
+  <div
+    class={`z-30 top-0 shadow-sm fixed duration-400 px-4 h-16 w-full bg-bglight bg-opacity-50 
+    sm:px-8
+    dark:bg-opacity-60 dark:bg-bgdark
+    after:backdrop-blur-xl after:w-full after:h-full after:absolute after:top-0 after:left-0 after:-z-10`}
+    style="top: 0px;"
+  >
+    <div
+      class="w-full h-full mx-auto max-w-6xl flex items-center justify-between"
+    >
+      <a
+        class={`text-white text-2xl 
+        md:hover:text-black-200 dark:md:hover:text-carrigreen 
+        focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen`}
+        href="/"
+        >eolunas<span class="outline-marrsgreen dark:text-carrigreen">.dev</span
+        ></a
+      >
+      <nav class="flex items-center">
+        <div
+          class={`flex justify-evenly items-center py-2 w-11/12 fixed bottom-4 transform -translate-x-1/2 z-30 left-1/2 bg-clip-padding bg-bglight rounded-2xl drop-shadow-lg backdrop-filter backdrop-blur-xl !bg-opacity-50 
+        dark:bg-carddark dark:text-textlight
+          md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none md:static md:left-auto 
+          md:transform-none md:drop-shadow-none`}
+        >
+          <a
+            href="#aboutme"
+            class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline false"
+            ><PerfilIcon class="md:hidden" />
+            <span class="whitespace-nowrap">Sobre mi</span></a
+          >
+
+          <a
+            href="#projects"
+            class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline false"
+          >
+            <CodeIcon class="md:hidden" />
+            <span class="whitespace-nowrap">Proyectos</span></a
+          >
+
+          <a
+            href="#blog"
+            class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline false"
+          >
+            <BlogIcon class="md:hidden" />
+            <span class="whitespace-nowrap">Blog</span></a
+          >
+
+          <a
+            href="#contact"
+            class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline false"
+          >
+            <MessageIcon class="md:hidden" />
+            <span class="whitespace-nowrap">Contacto</span></a
+          >
+        </div>
+        <ThemeChanger client:visible transition:persist />
+      </nav>
+    </div>
+  </div>
 </header>
