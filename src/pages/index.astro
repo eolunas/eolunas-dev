@@ -16,15 +16,19 @@ import Projects from "../components/Projects.astro";
   title="Portfolio de eolunas - Desarrollador y Programador Web"
   description="Contrata el mejor talento par desarrollar tus paginas web y tener un despliegue exitoso."
 >
-  <main>
-    <SectionContainer class="py-20">
+  <main class="max-w-6xl mx-auto">
+    <SectionContainer id="banner" class="pt-20">
       <img
         class="rounded-full size-20 m-2"
         src="https://lh3.googleusercontent.com/a/ACg8ocJp7UNHYn1L3vzHQqpWrod9wD5sfIMpQMMaR2gjT-WXnhb3=s329-c-no"
         alt="eolunas dev avatar"
       />
-      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
-        Hey, soy eolunas
+      <h1
+        class={`text-black/70 text-4xl font-bold flex flex-row gap-x-4 pb-4
+        sm:text-5xl
+        dark:text-white`}
+      >
+        Hey, soy Eduardo Luna
         <a
           class="flex justify-center items-center"
           href="https://www.linkedin.com/in/eolunas"
@@ -40,7 +44,7 @@ import Projects from "../components/Projects.astro";
         >. Especializado en crear aplicaciones personalizadas y llamativas.
       </h2>
 
-      <nav class="flex justify-start items-center gap-x-6">
+      <nav class="flex justify-start items-center gap-x-6 flex-wrap">
         <SocialPill href="https://www.linkedin.com/in/eolunas">
           <LinkedInIcon class="size-6 text-white" />
           <span class="text-white">LinkedIn</span>
@@ -56,22 +60,52 @@ import Projects from "../components/Projects.astro";
       </nav>
     </SectionContainer>
 
-    <SectionContainer id="experience" class="py-3">
+    <SectionContainer id="aboutme" class="pt-16">
       <h2
         class="flex items-center gap-x-2 text-3xl font-semibold text-white py-4"
       >
-        <ToolIcon class="size-8" /> Experiencia Laboral
+        Sobre mi
       </h2>
+      <p class="text-white text-lg">
+        Decripcion de mi Perfil, ruta academica y experiencia laboral.
+      </p>
+      <h3
+        class="flex items-center gap-x-2 text-2xl font-semibold text-white py-4"
+      >
+        <ToolIcon class="size-8" /> Experiencia Laboral
+      </h3>
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="projects" class="py-3">
+    <SectionContainer id="projects" class="pt-16">
       <h2
         class="flex items-center gap-x-2 text-3xl font-semibold text-white py-4"
       >
         <CodeIcon class="size-8" /> Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="blog" class="pt-16">
+      <h2
+        class="flex items-center gap-x-2 text-3xl font-semibold text-white py-4"
+      >
+        Blog
+      </h2>
+      <p class="text-white text-lg">
+        Decripcion de 'How to do' algunos proyectos e informacion de interes.
+      </p>
+    </SectionContainer>
+
+    <SectionContainer id="contact" class="pt-16">
+      <h2
+        class="flex items-center gap-x-2 text-3xl font-semibold text-white py-4"
+      >
+        Contacto
+      </h2>
+      <p class="text-white text-lg">
+        Formulario de contacto e informacion relevante de redes.
+      </p>
     </SectionContainer>
   </main>
 </Layout>

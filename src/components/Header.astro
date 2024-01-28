@@ -12,17 +12,16 @@ import { ThemeChanger } from "./ThemeChanger";
     sm:px-8
     dark:bg-opacity-60 dark:bg-bgdark
     after:backdrop-blur-xl after:w-full after:h-full after:absolute after:top-0 after:left-0 after:-z-10`}
-    style="top: 0px;"
   >
     <div
       class="w-full h-full mx-auto max-w-6xl flex items-center justify-between"
     >
       <a
-        class={`text-white text-2xl 
-        md:hover:text-black-200 dark:md:hover:text-carrigreen 
-        focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen`}
-        href="/"
-        >eolunas<span class="outline-marrsgreen dark:text-carrigreen">.dev</span
+        class={`text-black-200 text-2xl 
+        md:hover:text-marrsgreen  
+        dark:text-white dark:md:hover:text-carrigreen`}
+        href="#banner"
+        >eolunas<span class="text-marrsgreen dark:text-carrigreen">.dev</span
         ></a
       >
       <nav class="flex items-center">
@@ -35,7 +34,7 @@ import { ThemeChanger } from "./ThemeChanger";
           <a
             href="#aboutme"
             class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline false"
-            ><PerfilIcon class="md:hidden" />
+            ><PerfilIcon class="md:hidden size-6 mb-1" />
             <span class="whitespace-nowrap">Sobre mi</span></a
           >
 
@@ -43,7 +42,7 @@ import { ThemeChanger } from "./ThemeChanger";
             href="#projects"
             class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline false"
           >
-            <CodeIcon class="md:hidden" />
+            <CodeIcon class="md:hidden size-6 mb-1" />
             <span class="whitespace-nowrap">Proyectos</span></a
           >
 
@@ -51,7 +50,7 @@ import { ThemeChanger } from "./ThemeChanger";
             href="#blog"
             class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline false"
           >
-            <BlogIcon class="md:hidden" />
+            <BlogIcon class="md:hidden size-6 mb-1" />
             <span class="whitespace-nowrap">Blog</span></a
           >
 
@@ -59,7 +58,7 @@ import { ThemeChanger } from "./ThemeChanger";
             href="#contact"
             class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline false"
           >
-            <MessageIcon class="md:hidden" />
+            <MessageIcon class="md:hidden size-6 mb-1" />
             <span class="whitespace-nowrap">Contacto</span></a
           >
         </div>
