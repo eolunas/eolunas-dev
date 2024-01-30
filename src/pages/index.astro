@@ -18,45 +18,50 @@ import Avatar from "../icons/Avatar";
   description="Contrata el mejor talento par desarrollar tus paginas web y tener un despliegue exitoso."
 >
   <main class="max-w-6xl mx-auto">
-    <SectionContainer id="banner" class="pt-20">
-      <Avatar
-        class="w-1/2 max-w-[280px] mx-auto pb-5 drop-shadow-2xl dark:drop-shadow-none"
-        client:visible
-        transition:persist
-      />
-      <h1
-        class={`text-black/70 text-4xl font-bold flex flex-col sm:flex-row sm:justify-between gap-y-4 pb-4
-        sm:text-5xl
-        dark:text-white`}
+    <SectionContainer id="banner" class="pt-20 md:pt-28">
+      <article
+        class="flex flex-col lg:flex-row lg:items-center lg:justify-evenly"
       >
-        <div>
-          Hey, soy <span class="text-marrsgreen dark:text-carrigreen"
-            >Eduardo Luna</span
+        <Avatar
+          class="w-2/3 max-w-[280px] mx-auto pb-5 text-marrsgreen dark:text-carrigreen drop-shadow-2xl dark:drop-shadow-none"
+          client:visible
+          transition:persist
+        />
+        <div class="lg:basis-4/5">
+          <h1
+            class={`text-black/70 text-4xl font-bold flex flex-col sm:flex-row sm:justify-between gap-y-4 pb-4
+            sm:text-5xl
+            dark:text-white`}
           >
+            <div>
+              Hey, soy <span class="text-marrsgreen dark:text-carrigreen"
+                >Eduardo Luna</span
+              >
+            </div>
+            <a
+              href="https://www.linkedin.com/in/eolunas"
+              target="_blank"
+              rel="noopener"
+            >
+              <Badge
+                class={`p-2 mr-2 
+              transition duration-200 
+              hover:scale-105 hover:bg-marrsgreen/20 hover:translate-x-2`}
+              >
+                Desarrollador disponible!
+              </Badge>
+            </a>
+          </h1>
+          <h2
+            class={`text-2xl text-black/90 opacity-80 text-pretty py-6
+          dark:text-white`}
+          >
+            <span>Ingeniero Mecatronico y desarrollador Web</span>. <span
+              class="opacity-80">Bogotá, Colombia co</span
+            >. Especializado en crear aplicaciones personalizadas y llamativas.
+          </h2>
         </div>
-        <a
-          href="https://www.linkedin.com/in/eolunas"
-          target="_blank"
-          rel="noopener"
-        >
-          <Badge
-            class={`p-2 mr-2 
-          transition duration-200 
-          hover:scale-105 hover:bg-marrsgreen/20 hover:translate-x-2`}
-          >
-            Desarrollador disponible!
-          </Badge>
-        </a>
-      </h1>
-
-      <h2
-        class={`text-2xl text-black/90 opacity-80 text-pretty py-6
-        dark:text-white`}
-      >
-        <span>Ingeniero Mecatronico y desarrollador Web</span>. <span
-          class="opacity-80">Bogotá, Colombia co</span
-        >. Especializado en crear aplicaciones personalizadas y llamativas.
-      </h2>
+      </article>
 
       <nav class="flex justify-start items-center gap-x-6 flex-wrap">
         <SocialPill href="https://www.linkedin.com/in/eolunas">

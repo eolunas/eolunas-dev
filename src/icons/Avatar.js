@@ -78,7 +78,7 @@ export default function Avatar(props) {
           <rect
             width={240}
             height={240}
-            fill="#4aa"
+            fill="currentColor"
             fillRule="evenodd"
             rx={0}
             ry={0}
