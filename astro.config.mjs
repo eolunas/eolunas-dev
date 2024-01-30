@@ -8,5 +8,4 @@ import preact from "@astrojs/preact";
 export default defineConfig({
   integrations: [tailwind(), preact()],
   site: "https://eolunas.github.io",
-  base: "/portfolio",
 });
