@@ -1,0 +1,42 @@
+---
+import AcademicItem from "./AcademicItem.astro";
+import BookIcon from "../icons/Book.astro";
+const { class: className } = Astro.props;
+const EXPERIENCE = [
+  {
+    date: "2023 - en curso",
+    title: "Certified Tech Developer",
+    company: "Digital House",
+    description:
+      "Carrera técnica desarrollador Full Stack diseñada en conjunto con Globant y Mercado Libre [Front End - Back End - Infraestructura - Bases de datos - Soft Skills].",
+  },
+  {
+    date: "2020 - 2021",
+    title: "Diploma Machine Learning and Data Science",
+    company: "Universidad Nacional de Colombia",
+    description:
+      "Diplomado compuesto por las materias [Análisis y visualización de datos con Python, Introducción a machine learning con Python, Big Data].",
+  },
+  {
+    date: "2011 - 2016",
+    title: "Ingeniería Mecatrónica",
+    company: "Universidad Nacional de Colombia",
+    description:
+      "Carrera profesional con énfasis en automatización industrial y desarrollo de software.",
+  },
+];
+---
+
+<div class={`${className}`}>
+  <h3 class="flex items-center gap-x-2 text-2xl font-semibold text-white py-4">
+    <BookIcon class="size-8" /> Educación
+  </h3>
+
+  <ol class={`relative border-s border-gray-200 dark:border-gray-700 ml-3`}>
+    {
+      EXPERIENCE.map((study, index) => {
+        return <AcademicItem {...{ ...study, index }} />;
+      })
+    }
+  </ol>
+</div>

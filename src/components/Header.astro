@@ -6,12 +6,15 @@ import MessageIcon from "../icons/Message.astro";
 import { ThemeChanger } from "./ThemeChanger";
 ---
 
-<header class="md:flex">
+<header class="md:flex md:items-center md:justify-center">
   <div
-    class={`z-30 top-0 shadow-sm fixed duration-400 px-4 h-16 w-full bg-bglight bg-opacity-50 
-    sm:px-8
+    class={`
+    z-30 top-0 shadow-sm fixed duration-400 px-4 h-16 w-full max-w-6xl bg-bglight bg-opacity-50 
+    sm:px-8 md:mt-3 md:w-11/12 md:rounded-lg
     dark:bg-opacity-60 dark:bg-bgdark
-    after:backdrop-blur-xl after:w-full after:h-full after:absolute after:top-0 after:left-0 after:-z-10`}
+    after:backdrop-blur-xl after:w-full after:h-full 
+    after:absolute after:top-0 after:left-0 after:-z-10
+    after:md:rounded-lg`}
   >
     <div
       class="w-full h-full mx-auto max-w-6xl flex items-center justify-between"

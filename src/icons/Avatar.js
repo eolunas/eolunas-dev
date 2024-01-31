@@ -34,12 +34,12 @@ export default function Avatar(props) {
   return (
     <svg
       id="avatar"
+      class={props.class}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       shapeRendering="geometricPrecision"
       textRendering="geometricPrecision"
       viewBox="0 0 264 280"
-      {...props}
     >
       <defs>
         <path

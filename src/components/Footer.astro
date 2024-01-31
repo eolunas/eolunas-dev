@@ -1,22 +1,25 @@
-<footer class="max-w-6xl rounded-lg shadow m-4 bg-black/20 backdrop-blur-lg w-3/4 mx-auto mb-6">
+---
+import Heart from "../icons/Heart.astro";
+---
+
+<footer
+  class={`
+w-11/12 max-w-6xl mx-auto mb-24
+sm:mb-6
+rounded-lg shadow m-4 bg-black/20 backdrop-blur-lg `}
+>
   <div
-    class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+    class={`
+    max-w-screen-xl p-4 
+    text-sm md:text-md  text-yellow-200/90
+    flex items-center justify-center`}
   >
-    <span class="text-sm sm:text-center text-yellow-200/90"
-      >© 2024 <a
-        href="https://www.linkedin.com/in/eolunas"
-        class="hover:underline">eolunas</a
-      >. All Rights Reserved.
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium text-white/90 sm:mt-0"
+    Coded with
+    <Heart />
+    by 
+    <a class="hover:underline pl-1" href="https://www.linkedin.com/in/eolunas"
+    target="_blank"
+      >eolunas</a
     >
-      <li>
-        <a href="#" class="hover:underline me-4 md:me-6">Sobre mi</a>
-      </li>
-      <li>
-        <a href="#" class="hover:underline">Contacto</a>
-      </li>
-    </ul>
   </div>
 </footer>

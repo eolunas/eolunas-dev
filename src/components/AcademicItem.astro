@@ -1,0 +1,58 @@
+---
+import CalendarIcon from "../icons/Calendar.astro";
+interface Props {
+  date: string;
+  title: string;
+  company: string;
+  description: string;
+  index: number;
+}
+const { date, title, company, description, index } = Astro.props;
+---
+
+<li
+  class={`
+  border-l-2
+  ${index == 0 ? "border-purple-600" : "border-green-600"}`}
+>
+  <div class="md:flex flex-start">
+    <div
+      class={`${
+        index == 0 ? "bg-purple-600" : "bg-green-600"
+      } w-6 h-6 flex items-center justify-center rounded-full -ml-2.5 `}
+    >
+      <CalendarIcon class="text-white w-3 h-3" />
+    </div>
+    <div class="block p-6 rounded-lg shadow-lg bg-gray-100 max-w-md ml-6 mb-10">
+      <div class="flex justify-between items-center mb-1">
+        <a
+          href="#!"
+          class="basis-4/6 text-sm md:text-lg font-bold text-purple-600 hover:text-purple-700 focus:text-purple-800 duration-300 transition ease-in-out"
+          >{title}</a
+        >
+        <span
+          class="font-medium text-purple-600 hover:text-purple-700 focus:text-purple-800 duration-300 transition ease-in-out text-sm"
+          >{date}</span
+        >
+      </div>
+      <p
+        class="text-sm md:text-md font-semibold text-purple-600 hover:text-purple-700 focus:text-purple-800 duration-300 transition ease-in-out mb-3"
+      >
+        {company}
+      </p>
+      <p class="text-gray-700 mb-6">
+        {description}
+      </p>
+      <button
+        type="button"
+        class="inline-block px-4 py-1.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+        data-mdb-ripple="true">Preview</button
+      >
+      <button
+        type="button"
+        class="inline-block px-3.5 py-1 border-2 border-purple-600 text-purple-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+        data-mdb-ripple="true">See demo</button
+      >
+    </div>
+  </div>
+</li>
