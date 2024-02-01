@@ -7,23 +7,34 @@ export default function Avatar(props) {
   });
 
   const calcDiff = (cx, cy, ex, ey, radius = 10) => {
-    const y = ey - cy;
-    const x = ex - cx;
-    const rad = Math.atan2(y, x);
-    const dx = radius * Math.cos(rad);
-    const dy = radius * Math.sin(rad);
+    const rad = Math.atan2(ey - cy, ex - cx);
+    let dx = radius * Math.abs(Math.cos(rad)) * ((cx - ex) / ex);
+    dx = dx > radius ? radius : dx;
+    let dy = radius * Math.abs(Math.sin(rad)) * ((cy - ey) / ey);
+    dy = dy > radius ? radius : dy;
     return { dx, dy };
   };
-  useEffect(() => {
+
+  const getPosition = () => {
     const avatar = document.getElementById("avatar");
+    const { top, left, height, width } = avatar.getBoundingClientRect();
+    //in expresion (0.5 +/- X) adjust X to find the center Y
+    const y = top + (0.5 - 0.13) * height;
+    const xl = left + (0.5 - 0.1) * width;
+    const xr = left + (0.5 + 0.1) * width;
+    return { y, xl, xr };
+  };
+
+  useEffect(() => {
+    let eye = getPosition();
+
+    window.addEventListener("resize", () => {
+      eye = getPosition();
+    });
+
     document.addEventListener("mousemove", ({ clientX, clientY }) => {
-      const rect = avatar.getBoundingClientRect();
-      //in expresion (0.5 +/- X) adjust X to find the center Y
-      const posY = rect.top + (0.5 - 0.13) * rect.height;
-      const posELX = rect.left + (0.5 - 0.1) * rect.width;
-      const posERX = rect.left + (0.5 + 0.1) * rect.width;
-      const left = calcDiff(clientX, clientY, posELX, posY);
-      const right = calcDiff(clientX, clientY, posERX, posY);
+      const left = calcDiff(clientX, clientY, eye.xl, eye.y);
+      const right = calcDiff(clientX, clientY, eye.xr, eye.y);
       setDiffEye({
         left,
         right,
@@ -200,14 +211,14 @@ export default function Avatar(props) {
         <g fillOpacity={0.6} fillRule="evenodd" transform="translate(76 90)">
           <circle
             r={6}
-            transform={`translate(${30 - diffEye.left.dx} ${
-              22 - diffEye.left.dy
+            transform={`translate(${30 + diffEye.left.dx} ${
+              22 + diffEye.left.dy
             })`}
           />
           <circle
             r={6}
-            transform={`translate(${82 - diffEye.right.dx} ${
-              22 - diffEye.right.dy
+            transform={`translate(${82 + diffEye.right.dx} ${
+              22 + diffEye.right.dy
             })`}
           />
         </g>

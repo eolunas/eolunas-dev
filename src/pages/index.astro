@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import SocialPill from "../icons/SocialPill.astro";
 import LinkedInIcon from "../icons/LinkedIn.astro";
+import DownloadIcon from "../icons/Download.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import MailIcon from "../icons/Mail.astro";
 import Experience from "../components/Experience.astro";
@@ -9,7 +10,6 @@ import SectionContainer from "../components/SectionContainer.astro";
 import CodeIcon from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
 import Avatar from "../icons/Avatar";
-import LinkButton from "../components/LinkButton.astro";
 import Academic from "../components/Academic.astro";
 ---
 
@@ -19,103 +19,118 @@ import Academic from "../components/Academic.astro";
 >
   <main class="max-w-6xl mx-auto">
     <SectionContainer id="banner" class="pt-20 lg:pt-28">
-      <article class="flex flex-col items-center justify-evenly lg:flex-row">
-        <div class="w-2/3 flex flex-col justify-center items-center">
-          <Avatar
-            class={`
-            w-full max-w-[280px] mx-auto pb-5 text-marrsgreen shadow-black drop-shadow-2xl
-            md:pb-0
+      <article
+        class={`
+      flex flex-col items-center justify-evenly 
+      lg:flex-row`}
+      >
+        <Avatar
+          class={`
+            w-3/5 max-w-[280px] mx-auto pb-5 text-marrsgreen shadow-black drop-shadow-2xl
+            md:w-1/4 lg:w-1/2
           dark:text-carrigreen  dark:shadow-white`}
-            client:visible
-            transition:persist
-          />
-          <LinkButton
-            class="w-3/5 hidden p-2 m-4 lg:flex"
-            href="https://www.linkedin.com/in/eolunas"
-          >
-            Desarrollador disponible!
-          </LinkButton>
-        </div>
+          client:visible
+        />
 
-        <div class="lg:basis-4/5">
+        <div class="md:basis-2/3">
+          <span class="text-marrsgreen lg:text-xl dark:text-carrigreen"
+            >Hola, que gusto tu visita, soy</span
+          >
           <h1
             class={`
-            text-black/70 text-4xl font-bold gap-y-4 pb-4 flex flex-col 
-            dark:text-white`}
+            text-black/70 text-3xl font-semibold my-1
+            dark:text-white
+            md:text-5xl lg:text-6xl md:my-2`}
           >
-            <p
-              class={`flex flex-col gap-3
-            lg:flex-row`}
-            >
-              <span>Hey, soy</span>
-              <span class="text-marrsgreen dark:text-carrigreen"
-                >Eduardo Luna</span
-              >
-            </p>
-
-            <LinkButton
-              class="p-2 lg:hidden"
-              href="https://www.linkedin.com/in/eolunas"
-            >
-              Desarrollador disponible!
-            </LinkButton>
+            Eduardo Luna
           </h1>
-          <div>
-            <h2
-              class={`text-2xl text-black/90 opacity-80 text-pretty py-6
-            dark:text-white`}
+          <span
+            class={`
+            text-xl block text-marrsgreen font-medium
+            md:text-2xl lg:text-4xl md:my-3 dark:text-carrigreen`}
+            >Desarrollador Full-stack</span
+          >
+          <div class="mt-3 my-4 md:mb-8">
+            <p
+              class={`
+              text-black/70 font-medium text-md my-1
+            dark:text-white lg:text-xl mb-5`}
             >
-              <span>Ingeniero Mecatronico y desarrollador Web</span>. <span
-                class="opacity-80">Bogotá, Colombia co</span
-              >. Especializado en crear aplicaciones personalizadas y
-              llamativas.
-            </h2>
+              <span
+                >Ingeniero mecatrónico con experiencia en <span
+                  class="font-semibold text-marrslight/80 dark:text-carrigreen/80"
+                  >diseño y producción de software</span
+                > tales como aplicaciones y dashboards. De
+              </span>
+              <span
+                class="font-semibold text-marrslight/80 dark:text-carrigreen/80"
+                >Bogotá, Colombia.</span
+              > Especializado en implementación de soluciones creativas, con elevado
+              nivel de impacto y usabilidad.
+            </p>
           </div>
-          <nav class="flex justify-start items-center gap-x-6 flex-wrap">
+
+          <nav class="flex justify-around items-center flex-wrap text-sm">
             <SocialPill href="https://www.linkedin.com/in/eolunas">
               <LinkedInIcon class="size-6 text-white" />
-              <span class="text-white">LinkedIn</span>
+              <span class="text-white hidden md:flex">LinkedIn</span>
             </SocialPill>
             <SocialPill href="https://www.github.com/eolunas">
               <GitHubIcon class="size-6 text-white" />
-              <span class="text-white">GitHub</span>
+              <span class="text-white hidden md:flex">GitHub</span>
             </SocialPill>
-            <SocialPill href="https://www.github.com/eolunas">
+            <SocialPill href="mailto:eolunas@gmail.com">
               <MailIcon class="size-6 text-white" />
-              <span class="text-white">eolunas@gmail.com</span>
+              <span class="text-white hidden md:flex">eolunas@gmail.com</span>
+            </SocialPill>
+            <SocialPill
+              href="/eolunas-dev/CV-Eduardo-Luna-ES.pdf"
+              download="CV-EduardoLuna"
+            >
+              <DownloadIcon class="size-6 text-white" />
+              <span class="text-white hidden md:flex">Curriculum</span>
             </SocialPill>
           </nav>
         </div>
       </article>
     </SectionContainer>
 
-    <SectionContainer id="aboutme" class="pt-16">
+    <SectionContainer id="aboutme" class="pt-14">
       <h2
-        class="flex items-center gap-x-2 text-3xl font-semibold text-white py-4"
+        class={`
+        text-black/70 text-3xl font-semibold my-1 py-4
+        flex items-center gap-x-2  
+        dark:text-white`}
       >
         Sobre mi
       </h2>
-      <p class="text-white text-lg">
+      <p
+        class={`
+      text-black/70 text-lg
+      dark:text-white "`}
+      >
         Decripcion de mi Perfil, ruta academica y experiencia laboral.
       </p>
-      <article class="w-full flex flex-col justify-center items-center lg:flex-row lg:items-start">
+      <article
+        class="w-full flex flex-col justify-center items-center lg:flex-row lg:items-start"
+      >
         <Experience class="w-full lg:w-1/2" />
         <Academic class="w-full lg:w-1/2" />
       </article>
     </SectionContainer>
 
-    <SectionContainer id="projects" class="pt-16">
+    <SectionContainer id="projects" class="pt-14">
       <h2
-        class="flex items-center gap-x-2 text-3xl font-semibold text-white py-4"
+        class="flex items-center gap-x-2 text-3xl font-semibold py-4 text-gray-700 dark:text-white"
       >
         <CodeIcon class="size-8" /> Proyectos
       </h2>
       <Projects />
     </SectionContainer>
 
-    <SectionContainer id="blog" class="pt-16">
+    <SectionContainer id="blog" class="pt-14">
       <h2
-        class="flex items-center gap-x-2 text-3xl font-semibold text-white py-4"
+        class="flex items-center gap-x-2 text-3xl font-semibold py-4 text-gray-700 dark:text-white"
       >
         Blog
       </h2>
@@ -124,9 +139,9 @@ import Academic from "../components/Academic.astro";
       </p>
     </SectionContainer>
 
-    <SectionContainer id="contact" class="pt-16">
+    <SectionContainer id="contact" class="pt-14">
       <h2
-        class="flex items-center gap-x-2 text-3xl font-semibold text-white py-4"
+        class="flex items-center gap-x-2 text-3xl font-semibold py-4 text-gray-700 dark:text-white"
       >
         Contacto
       </h2>
