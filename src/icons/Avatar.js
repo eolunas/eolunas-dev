@@ -15,30 +15,27 @@ export default function Avatar(props) {
     return { dx, dy };
   };
 
-  const getPosition = () => {
-    const avatar = document.getElementById("avatar");
-    const { top, left, height, width } = avatar.getBoundingClientRect();
-    //in expresion (0.5 +/- X) adjust X to find the center Y
-    const y = top + (0.5 - 0.13) * height;
-    const xl = left + (0.5 - 0.1) * width;
-    const xr = left + (0.5 + 0.1) * width;
-    return { y, xl, xr };
-  };
-
   useEffect(() => {
-    let eye = getPosition();
-
-    window.addEventListener("resize", () => {
-      eye = getPosition();
-    });
+    const avatar = document.getElementById("avatar");
+    const getPosition = () => {
+      const { bottom, left, height, width } = avatar.getBoundingClientRect();
+      //in expresion (0.5 +/- X) adjust X to find the center Y
+      const y = bottom - (0.5 + 0.1) * height;
+      const xl = left + (0.5 - 0.1) * width;
+      const xr = left + (0.5 + 0.1) * width;
+      return { y, xl, xr };
+    };
 
     document.addEventListener("mousemove", ({ clientX, clientY }) => {
-      const left = calcDiff(clientX, clientY, eye.xl, eye.y);
-      const right = calcDiff(clientX, clientY, eye.xr, eye.y);
-      setDiffEye({
-        left,
-        right,
-      });
+      let eye = getPosition();
+      if (eye.y > 0) {
+        const left = calcDiff(clientX, clientY, eye.xl, eye.y);
+        const right = calcDiff(clientX, clientY, eye.xr, eye.y);
+        setDiffEye({
+          left,
+          right,
+        });
+      }
     });
   }, []);
 
@@ -212,19 +209,22 @@ export default function Avatar(props) {
           <circle
             r={6}
             transform={`translate(${30 + diffEye.left.dx} ${
-              22 + diffEye.left.dy
+              24 + diffEye.left.dy
             })`}
           />
           <circle
             r={6}
             transform={`translate(${82 + diffEye.right.dx} ${
-              22 + diffEye.right.dy
+              24 + diffEye.right.dy
             })`}
           />
         </g>
         <path
           fillOpacity={0.6}
           fillRule="evenodd"
+          transform={`translate(0 ${
+            diffEye.left.dy < 0 ? diffEye.left.dy : 0
+          })`}
           d="M102.547 88.148c-5.807.269-15.195 4.488-14.953 10.344.008.192.29.276.427.129 2.755-2.96 22.316-5.95 29.205-4.365.63.145 1.11-.477.71-.927-3.422-3.848-10.186-5.426-15.389-5.18m59.906-.001c5.807.269 15.195 4.488 14.953 10.344-.008.192-.29.276-.427.129-2.755-2.96-22.315-5.95-29.205-4.365-.63.145-1.11-.477-.71-.927 3.422-3.848 10.186-5.426 15.389-5.18"
         />
         <g mask="url(#h)">
