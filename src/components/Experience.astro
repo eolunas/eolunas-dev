@@ -6,7 +6,7 @@ const { class: className } = Astro.props;
 
 const EXPERIENCE = [
   {
-    date: "2021-actualidad",
+    date: { start: "Jun 2021", end: "Hoy" },
     title: "Programador Freelance",
     company: "Freelance",
     location: "Bogotá, Colombia",
@@ -14,15 +14,15 @@ const EXPERIENCE = [
       "Consultoria en ingeniería, prototipos e impresión 3D,  creación de aplicaciones y sitios web según requerimientos.",
   },
   {
-    date: "2019-2021",
-    title: "Gerente de ingeniería electrónica",
+    date: { start: "May 2019", end: "Feb 2021" },
+    title: "Gerente ingeniería electrónica",
     company: "VC999 Packaging Systems Colombia S.A.S.",
     location: "Bogotá, Colombia",
     description:
       "Líder técnico, diseñador y director del equipo de programación, encargado del desarrollo de interfaces de usuario, lógica de funcionamiento de maquinaria y sistemas de gestión.",
   },
   {
-    date: "2017-2019",
+    date: { start: "Feb 2017", end: "May 2019" },
     title: "Ingeniero de proyectos",
     company: "VC999 Packaging Systems Colombia S.A.S.",
     location: "Bogotá, Colombia",
@@ -30,7 +30,7 @@ const EXPERIENCE = [
       "Desarrollador encargado de la programación, implementación y puesta en marcha de los equipos , así como del diseño de prototipos y soluciones de empaque.",
   },
   {
-    date: "2016-2017",
+    date: { start: "Mar 2016", end: "Ene 2017" },
     title: "Ingeniero Junior",
     company: "Teppack Colombia LTDA",
     location: "Bogotá, Colombia",
@@ -41,13 +41,15 @@ const EXPERIENCE = [
 ---
 
 <div class={`${className}`}>
-  <h3 class="flex items-center gap-x-2 text-2xl font-semibold py-4 text-gray-700  dark:text-white">
-    <ToolIcon class="size-8" /> Experiencia Laboral
+  <h3
+    class="flex items-center gap-x-2 text-2xl font-semibold py-4 text-gray-700 dark:text-white"
+  >
+    <ToolIcon class="size-8" /> Experiencia
   </h3>
   <ol class={`relative border-s border-gray-200 dark:border-gray-700 ml-3`}>
     {
       EXPERIENCE.map((experience) => (
-        <li class="mb-6 ms-4">
+        <li class="mb-5 ms-4">
           <ExperienceItem {...experience} />
         </li>
       ))
