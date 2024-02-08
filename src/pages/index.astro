@@ -1,5 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PerfilIcon from "../icons/Perfil.astro";
+import CodeIcon from "../icons/Code.astro";
+import BlogIcon from "../icons/Blog.astro";
+import MessageIcon from "../icons/Message.astro";
 import SocialPill from "../icons/SocialPill.astro";
 import LinkedInIcon from "../icons/LinkedIn.astro";
 import DownloadIcon from "../icons/Download.astro";
@@ -7,7 +11,6 @@ import GitHubIcon from "../icons/GitHub.astro";
 import MailIcon from "../icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import CodeIcon from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
 import Avatar from "../icons/Avatar";
 import Academic from "../components/Academic.astro";
@@ -98,11 +101,11 @@ import Academic from "../components/Academic.astro";
     <SectionContainer id="aboutme" class="pt-14">
       <h2
         class={`
-        text-black/70 text-3xl font-semibold my-1 py-4
-        flex items-center gap-x-2  
+        text-black/70 text-5xl font-semibold my-1 py-4
+        flex items-center justify-center gap-x-2  
         dark:text-white`}
       >
-        Sobre mi
+      <PerfilIcon class="size-10" /> Sobre mi
       </h2>
       <p
         class={`
@@ -121,18 +124,18 @@ import Academic from "../components/Academic.astro";
 
     <SectionContainer id="projects" class="pt-14">
       <h2
-        class="flex items-center gap-x-2 text-3xl font-semibold py-4 text-gray-700 dark:text-white"
+        class="flex items-center justify-center gap-x-2 text-5xl font-semibold py-4 text-gray-700 dark:text-white"
       >
-        <CodeIcon class="size-8" /> Proyectos
+        <CodeIcon class="size-10" /> Proyectos
       </h2>
       <Projects />
     </SectionContainer>
 
     <SectionContainer id="blog" class="pt-14">
       <h2
-        class="flex items-center gap-x-2 text-3xl font-semibold py-4 text-gray-700 dark:text-white"
+        class="flex items-center justify-center gap-x-2 text-5xl font-semibold py-4 text-gray-700 dark:text-white"
       >
-        Blog
+      <BlogIcon class="size-10" /> Blog
       </h2>
       <p class="text-white text-lg">
         Decripcion de 'How to do' algunos proyectos e informacion de interes.
@@ -141,9 +144,9 @@ import Academic from "../components/Academic.astro";
 
     <SectionContainer id="contact" class="pt-14">
       <h2
-        class="flex items-center gap-x-2 text-3xl font-semibold py-4 text-gray-700 dark:text-white"
+        class="flex items-center justify-center gap-x-2 text-5xl font-semibold py-4 text-gray-700 dark:text-white"
       >
-        Contacto
+      <MessageIcon class="size-10" /> Contacto
       </h2>
       <p class="text-white text-lg">
         Formulario de contacto e informacion relevante de redes.

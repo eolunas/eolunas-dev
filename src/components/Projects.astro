@@ -92,7 +92,9 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Publication App",
-    description: "Lorem ipsum ...",
+    description:
+      "Página web en la que se consumen datos de la API publica JsonPlaceHolder para obtener un listado de publicaciones y se muestran de manera organizada con scroll infinito y lazy loading, también se hace uso de las funciones de SSR proporcionadas por Next.js. El usuario puede ver en detalle, modificar y borrar las publicaciones, de la misma manera se pueden crear nuevas publicaciones que persisten de manera local.",
+    figma: null,
     link: "https://publication-page.vercel.app/",
     github: "https://github.com/eolunas/publication-web",
     image: "/eolunas-dev/projects/publication-web.webp",
@@ -100,7 +102,9 @@ const PROJECTS = [
   },
   {
     title: "Rick and Morty",
-    description: "Lorem ipsum ...",
+    description:
+      "Implementación de API pública del show Rick and Morty haciendo uso de todos los endpoint disponibles, para los cuales se crearon paginas independientes. De acuerdo a la localización del usuario el sistema de filtrado muestra opciones solo relacionadas con el endpoint de solicitud a la API, repositorio montado sobre GitHub Pages haciendo uso de GitHub Actions.",
+    figma: null,
     link: "https://eolunas.github.io/rickandmorty/",
     github: "https://github.com/eolunas/rickandmorty",
     image: "/eolunas-dev/projects/rick-and-morthy.webp",
@@ -108,7 +112,9 @@ const PROJECTS = [
   },
   {
     title: "My Day App",
-    description: "",
+    description:
+      "Implementación de las funcionalidades de aplicación para gestión de tareas, el usuario puede almacenar dichas tareas de manera local con una descripción, modificar las tareas haciendo doble click sobre ellas, categorizarlas como completadas, filtrarlas con un buscador por nombre o según su estado y hacer la eliminación individual o aquellas que se encuentren completadas. ",
+    figma: null,
     link: "https://eolunas.github.io/mydayapp/",
     github: "https://github.com/eolunas/mydayapp",
     image: "/eolunas-dev/projects/my-day-app.webp",
@@ -116,7 +122,8 @@ const PROJECTS = [
   },
   {
     title: "Smart Web Blind",
-    description: "",
+    description:
+      "Proyecto para control de persianas de forma automática mediante una aplicación web en cual se puede controlar de modo manual y configurar horarios en los cuales se abra o cierre a una posición especifica de forma automática, comunicación mediante protocolo HTTP usando placa Arduino y Ethernet Shield.",
     link: null,
     figma:
       "https://www.figma.com/file/Pml08ONq6TbMCq65bVEBOO/Smart-Blind-Web?type=design&node-id=0%3A1&mode=design&t=JA35QqGBV56mWZC4-1",
@@ -126,7 +133,9 @@ const PROJECTS = [
   },
   {
     title: "Travel Web",
-    description: "Lorem ipsum ...",
+    description:
+      "Landing page de una aplicación para reservaciones [solo maquetación] en la cual se implementa el uso de la última versión de la librería Tailwind-CSS y la configuración para el uso de darkmode.",
+    figma: null,
     link: "https://eolunas.github.io/travel-web/",
     github: "https://github.com/eolunas/travel-web",
     image: "/eolunas-dev/projects/travelweb.webp",
@@ -134,7 +143,9 @@ const PROJECTS = [
   },
   {
     title: "Bomber-Chip Game",
-    description: "Lorem ipsum ...",
+    description:
+      "Videojuego basado en juegos del año 90 en el que se implementa lógica de coaliciones, escucha de eventos de teclado, score basado en tiempo y jugabilidad mediante vidas. Se implementa sistema de ajuste responsivo.",
+    figma: null,
     link: "https://eolunas.github.io/bomber-chip-game/",
     github: "https://github.com/eolunas/bomber-chip-game",
     image: "/eolunas-dev/projects/bomber-chip-game.webp",
@@ -152,19 +163,11 @@ const PROJECTS = [
     PROJECTS.map(({ title, description, link, github, image, tags }) => (
       <div
         class={`
-        w-full my-5
+        w-full my-5 
         flex flex-col items-center
-        md:w-1/2
+        md:w-1/2 md:px-5
         `}
       >
-        <h3 class="w-full text-left text-xl font-semibold mb-1 text-marrsgreen dark:text-carrigreen">
-          {title}
-        </h3>
-
-        <p class="w-full text-left text-lg mb-4 text-pretty text-black/70 dark:text-white ">
-          {description}
-        </p>
-
         <div class="relative flex justify-center">
           <div
             class={`
@@ -194,6 +197,13 @@ const PROJECTS = [
             alt={`Captura de pantalla del proyecto ${image}`}
           />
         </div>
+
+        <h3 class="w-full text-left text-xl font-semibold mb-1 text-marrsgreen dark:text-carrigreen">
+          {title}
+        </h3>
+        <p class="w-full text-left text-xs mb-2 text-pretty text-black/70 dark:text-white md:text-sm">
+          {description}
+        </p>
 
         <ul class="w-full flex gap-x-2 flex-row flex-wrap mt-1 m-2">
           {tags.map((tag) => (
