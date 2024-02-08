@@ -1,59 +1,215 @@
 ---
 import NextJSIcon from "../icons/NextJS.astro";
-import TailwindIcon from "../icons/TailwindCSS.astro";
+import ReactIcon from "../icons/React.astro";
+import ReactRouterIcon from "../icons/ReactRouter.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
 import HtmlIcon from "../icons/Html.astro";
+import CSSIcon from "../icons/Css.astro";
+import JSIcon from "../icons/JavaScript.astro";
+import TSIcon from "../icons/TypeScript.astro";
+import TailwindIcon from "../icons/TailwindCSS.astro";
+import BootstrapIcon from "../icons/Bootstrap.astro";
+import ViteIcon from "../icons/Vite.astro";
+import PlaywrightIcon from "../icons/Playwright.astro";
+import WebpackIcon from "../icons/Webpack.astro";
+import CPPIcon from "../icons/CPP.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import DeployIcon from "../icons/Deployment.astro";
 
 const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-black/50 text-white",
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-cyan-500/90 text-white",
+    icon: CSSIcon,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-yellow-500/50 text-white",
+    icon: JSIcon,
+  },
+  TS: {
+    name: "TypeScript",
+    class: "bg-blue-500/40 text-white",
+    icon: TSIcon,
+  },
+  REACT: {
+    name: "React.js",
+    class: "bg-black text-white",
+    icon: ReactIcon,
+  },
+  REACTROUTER: {
+    name: "React-Router",
+    class: "bg-black/60 text-white",
+    icon: ReactRouterIcon,
+  },
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
+    class: "bg-white text-black",
     icon: NextJSIcon,
+  },
+  ASTRO: {
+    name: "Astro.js",
+    class: "bg-white text-black",
+    icon: AstroIcon,
   },
   TAILWIND: {
     name: "Tailwind-CSS",
     class: "bg-[#003159] text-white",
     icon: TailwindIcon,
   },
-  HTML: {
-    name: "HTML",
-    class: "bg-white/20 text-white",
-    icon: HtmlIcon,
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-purple-400/80 text-white",
+    icon: BootstrapIcon,
+  },
+  PLAYWRIGTH: {
+    name: "Playwright",
+    class: "bg-slate-800 text-white",
+    icon: PlaywrightIcon,
+  },
+  VITE: {
+    name: "Vite.js",
+    class: "bg-gray-500 text-white",
+    icon: ViteIcon,
+  },
+  WEBPACK: {
+    name: "Webpack",
+    class: "bg-blue-500 text-white",
+    icon: WebpackIcon,
+  },
+  CPP: {
+    name: "C++",
+    class: "bg-sky-700 text-white",
+    icon: CPPIcon,
   },
 };
+
 const PROJECTS = [
+  {
+    title: "Publication App",
+    description: "Lorem ipsum ...",
+    link: "https://publication-page.vercel.app/",
+    github: "https://github.com/eolunas/publication-web",
+    image: "/eolunas-dev/projects/publication-web.webp",
+    tags: [TAGS.NEXT, TAGS.TS, TAGS.TAILWIND],
+  },
+  {
+    title: "Rick and Morty",
+    description: "Lorem ipsum ...",
+    link: "https://eolunas.github.io/rickandmorty/",
+    github: "https://github.com/eolunas/rickandmorty",
+    image: "/eolunas-dev/projects/rick-and-morthy.webp",
+    tags: [TAGS.REACT, TAGS.REACTROUTER, TAGS.BOOTSTRAP, TAGS.VITE],
+  },
+  {
+    title: "My Day App",
+    description: "",
+    link: "https://eolunas.github.io/mydayapp/",
+    github: "https://github.com/eolunas/mydayapp",
+    image: "/eolunas-dev/projects/my-day-app.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS, TAGS.WEBPACK, TAGS.PLAYWRIGTH],
+  },
+  {
+    title: "Smart Web Blind",
+    description: "",
+    link: null,
+    figma:
+      "https://www.figma.com/file/Pml08ONq6TbMCq65bVEBOO/Smart-Blind-Web?type=design&node-id=0%3A1&mode=design&t=JA35QqGBV56mWZC4-1",
+    github: "https://github.com/eolunas/smart-blind-web",
+    image: "/eolunas-dev/projects/smart-web-blind.webp",
+    tags: [TAGS.CPP, TAGS.HTML, TAGS.CSS, TAGS.JS],
+  },
   {
     title: "Travel Web",
     description: "Lorem ipsum ...",
     link: "https://eolunas.github.io/travel-web/",
     github: "https://github.com/eolunas/travel-web",
     image: "/eolunas-dev/projects/travelweb.webp",
-    tags: [TAGS.HTML, TAGS.TAILWIND],
+    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.JS],
+  },
+  {
+    title: "Bomber-Chip Game",
+    description: "Lorem ipsum ...",
+    link: "https://eolunas.github.io/bomber-chip-game/",
+    github: "https://github.com/eolunas/bomber-chip-game",
+    image: "/eolunas-dev/projects/bomber-chip-game.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
   },
 ];
 ---
 
-{
-  PROJECTS.map(({ title, description, link, github, image, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex items-center gap-x-2 rounded-full text-xs py-2 px-2 ${tag.class}`}
-            >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
-    </article>
-  ))
-}
+<article
+  class={`
+  flex flex-col flex-wrap items-center justify-center
+  md:flex-row md:items-start`}
+>
+  {
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+      <div
+        class={`
+        w-full my-5
+        flex flex-col items-center
+        md:w-1/2
+        `}
+      >
+        <h3 class="w-full text-left text-xl font-semibold mb-1 text-marrsgreen dark:text-carrigreen">
+          {title}
+        </h3>
+
+        <p class="w-full text-left text-lg mb-4 text-pretty text-black/70 dark:text-white ">
+          {description}
+        </p>
+
+        <div class="relative flex justify-center">
+          <div
+            class={`
+          absolute -top-2.5 left-0
+          flex flex-col justify-center gap-y-0.5
+          bg-gray-200 p-2 rounded-xl`}
+          >
+            <a class="mb-2" href={link} target="_blank">
+              <DeployIcon
+                class={`
+              text-black/50 size-6 transition duration-200
+              hover:text-black hover:scale-125`}
+              />
+            </a>
+            <a class="" href={github} target="_blank">
+              <GitHubIcon
+                class={`
+              text-black/50 size-6 transition duration-200
+              hover:text-black hover:scale-125`}
+              />
+            </a>
+          </div>
+          <img
+            loading="lazy"
+            class="w-11/12 max-h-70 rounded object-cover mb-2"
+            src={image}
+            alt={`Captura de pantalla del proyecto ${image}`}
+          />
+        </div>
+
+        <ul class="w-full flex gap-x-2 flex-row flex-wrap mt-1 m-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`
+                    flex items-center justify-start gap-x-1 rounded-xl text-xs font-medium p-2.5 mb-2 
+                    ${tag.class}`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</article>
