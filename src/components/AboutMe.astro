@@ -1,0 +1,68 @@
+---
+import { EmailClipBoard } from "@/components/EmailClipBoard.jsx";
+---
+
+<article
+  class={`
+  w-full my-5
+  flex flex-col gap-4 justify-center items-center
+  lg:flex-row lg:justify-between
+`}
+>
+  <div>
+    <figure
+      class={`
+      size-[250px] p-1 rounded-3xl
+      transform -rotate-3 mb-3
+      bg-marrsgreen border-2 border-carrigreen
+      dark:bg-carrigreen dark:border-marrsgreen
+      md:size-[250px]
+      `}
+    >
+      <img
+        class={`
+        object-cover object-center w-full h-full rounded-2xl 
+        bg-marrsgreen border-1 border-carrigreen
+        dark:bg-carrigreen dark:border-marrsgreen
+        `}
+        src="/eolunas-dev/Eduardo-Luna.webp"
+        alt="Foto de perfil"
+      />
+    </figure>
+    <EmailClipBoard client:visible email="eolunas@gmail.com" />
+  </div>
+
+  <div
+    class={`
+    flex flex-col gap-3 mx-10 text-pretty w-full
+  [&>p]:text-black/70 [&>p]:text-md [&>p]:dark:text-white
+  [&>p>strong]:text-marrsgreen dark:[&>p>strong]:text-carrigreen [&>p>strong]:font-semibold
+    lg:w-2/3
+    `}
+  >
+    <p>
+      ¡Hola! Soy Eduardo Luna, quiero contarte que para mi todo inicio a los 5
+      años cuando toque un enchufe sin un buen polo a tierra, más allá de los
+      lloriqueos, la descarga despertó una profunda curiosidad por saber como
+      funciona todo. Desde ese entonces hasta hoy he llegado a <strong
+        >desarrollar soluciones en maquinaria y software para un gran numero de
+        empresas a nivel de las Américas</strong
+      >.
+    </p>
+    <p>
+      Entre mis éxitos se encuentra el <strong
+        >liderazgo y desarrollo de una línea completa de empaque y ensacado de
+        azúcar, para la segunda azucarera más importante de Colombia</strong
+      >. Allí se redujó drásticamente los tiempos muertos y optimizó la
+      digitalización de información, lo que resultó en un aumento significativo
+      de la eficiencia y la productividad, que contribuyó a un ambiente de
+      trabajo más dinámico y colaborativo.
+    </p>
+    <p>
+      En los últimos años como <strong>ingeniero mecatronico</strong> con conocimiento
+      en industria he incursionado en el <strong>desarrollo de software</strong>
+      en diversos niveles y lenguajes. Mi objetivo siempre ha sido ayudar a otros
+      con implementaciones que generen un verdadero valor agregado.
+    </p>
+  </div>
+</article>

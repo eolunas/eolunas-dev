@@ -1,19 +1,20 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import PerfilIcon from "../icons/Perfil.astro";
-import CodeIcon from "../icons/Code.astro";
-import BlogIcon from "../icons/Blog.astro";
-import MessageIcon from "../icons/Message.astro";
-import SocialPill from "../icons/SocialPill.astro";
-import LinkedInIcon from "../icons/LinkedIn.astro";
-import DownloadIcon from "../icons/Download.astro";
-import GitHubIcon from "../icons/GitHub.astro";
-import MailIcon from "../icons/Mail.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Projects from "../components/Projects.astro";
-import Avatar from "../icons/Avatar";
-import Academic from "../components/Academic.astro";
+import Layout from "@/layouts/Layout.astro";
+import PerfilIcon from "@/icons/Perfil.astro";
+import CodeIcon from "@/icons/Code.astro";
+import BlogIcon from "@/icons/Blog.astro";
+import MessageIcon from "@/icons/Message.astro";
+import SocialPill from "@/icons/SocialPill.astro";
+import LinkedInIcon from "@/icons/LinkedIn.astro";
+import DownloadIcon from "@/icons/Download.astro";
+import GitHubIcon from "@/icons/GitHub.astro";
+import MailIcon from "@/icons/Mail.astro";
+import Experience from "@/components/Experience.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Projects from "@/components/Projects.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import Avatar from "@/icons/Avatar";
+import Academic from "@/components/Academic.astro";
 ---
 
 <Layout
@@ -21,7 +22,10 @@ import Academic from "../components/Academic.astro";
   description="Contrata el mejor talento par desarrollar tus paginas web y tener un despliegue exitoso."
 >
   <main class="max-w-6xl mx-auto">
-    <SectionContainer id="banner" class="pt-20 lg:pt-28">
+    <SectionContainer
+      id="banner"
+      class="flex items-center justify-center h-screen pt-20 lg:pt-28"
+    >
       <article
         class={`
       flex flex-col items-center justify-evenly 
@@ -31,7 +35,8 @@ import Academic from "../components/Academic.astro";
           class={`
             w-3/5 max-w-[280px] mx-auto pb-5 text-marrsgreen shadow-black drop-shadow-2xl
             md:w-1/4 lg:w-1/2
-          dark:text-carrigreen  dark:shadow-white`}
+          dark:text-carrigreen  dark:shadow-white
+          `}
           client:visible
         />
 
@@ -98,22 +103,7 @@ import Academic from "../components/Academic.astro";
       </article>
     </SectionContainer>
 
-    <SectionContainer id="aboutme" class="pt-14">
-      <h2
-        class={`
-        text-black/70 text-5xl font-semibold my-1 py-4
-        flex items-center justify-center gap-x-2  
-        dark:text-white`}
-      >
-      <PerfilIcon class="size-10" /> Sobre mi
-      </h2>
-      <p
-        class={`
-      text-black/70 text-lg
-      dark:text-white "`}
-      >
-        Decripcion de mi Perfil, ruta academica y experiencia laboral.
-      </p>
+    <SectionContainer id="experience" class="pt-14">
       <article
         class="w-full flex flex-col justify-center items-center lg:flex-row lg:items-start"
       >
@@ -135,22 +125,27 @@ import Academic from "../components/Academic.astro";
       <h2
         class="flex items-center justify-center gap-x-2 text-5xl font-semibold py-4 text-gray-700 dark:text-white"
       >
-      <BlogIcon class="size-10" /> Blog
+        <BlogIcon class="size-10" /> Blog
       </h2>
-      <p class="text-white text-lg">
+      <p
+        class={`
+        text-black/70 text-md dark:text-white
+        `}
+      >
         Decripcion de 'How to do' algunos proyectos e informacion de interes.
       </p>
     </SectionContainer>
 
-    <SectionContainer id="contact" class="pt-14">
+    <SectionContainer id="aboutme" class="pt-14">
       <h2
-        class="flex items-center justify-center gap-x-2 text-5xl font-semibold py-4 text-gray-700 dark:text-white"
+        class={`
+        text-black/70 text-5xl font-semibold my-1 py-4
+        flex items-center justify-center gap-x-2  
+        dark:text-white`}
       >
-      <MessageIcon class="size-10" /> Contacto
+        <PerfilIcon class="size-10" /> Sobre mi
       </h2>
-      <p class="text-white text-lg">
-        Formulario de contacto e informacion relevante de redes.
-      </p>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>

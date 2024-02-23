@@ -25,7 +25,7 @@ import LinkButton from "../components/LinkButton.astro";
           class={`text-black-200 text-2xl 
         md:hover:text-marrsgreen  
         dark:text-white dark:md:hover:text-carrigreen`}
-          href="#banner"
+          href="/eolunas-dev/#banner"
           >eolunas<span class="text-marrsgreen dark:text-carrigreen">.dev</span
           ></a
         >
@@ -43,14 +43,14 @@ import LinkButton from "../components/LinkButton.astro";
           md:transform-none md:drop-shadow-none`}
         >
           <a
-            href="#aboutme"
+            href="/eolunas-dev/#experience"
             class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-4 md:hover:text-marrsgreen md:dark:hover:text-carrigreen"
-            ><PerfilIcon class="md:hidden size-6 mb-1" />
-            <span class="whitespace-nowrap">Sobre mi</span></a
           >
-
+            <MessageIcon class="md:hidden size-6 mb-1" />
+            <span class="whitespace-nowrap">Experiencia</span></a
+          >
           <a
-            href="#projects"
+            href="/eolunas-dev/#projects"
             class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-4 md:hover:text-marrsgreen md:dark:hover:text-carrigreen"
           >
             <CodeIcon class="md:hidden size-6 mb-1" />
@@ -58,7 +58,7 @@ import LinkButton from "../components/LinkButton.astro";
           >
 
           <a
-            href="#blog"
+            href="/eolunas-dev/#blog"
             class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-4 md:hover:text-marrsgreen md:dark:hover:text-carrigreen"
           >
             <BlogIcon class="md:hidden size-6 mb-1" />
@@ -66,11 +66,10 @@ import LinkButton from "../components/LinkButton.astro";
           >
 
           <a
-            href="#contact"
+            href="/eolunas-dev/#aboutme"
             class="text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-4 md:hover:text-marrsgreen md:dark:hover:text-carrigreen"
-          >
-            <MessageIcon class="md:hidden size-6 mb-1" />
-            <span class="whitespace-nowrap">Contacto</span></a
+            ><PerfilIcon class="md:hidden size-6 mb-1" />
+            <span class="whitespace-nowrap">Sobre mi</span></a
           >
         </div>
         <ThemeChanger client:visible transition:persist />
