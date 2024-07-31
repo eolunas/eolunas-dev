@@ -5,8 +5,16 @@ import ToolIcon from "../icons/Tool.astro";
 const { class: className } = Astro.props;
 
 const EXPERIENCE = [
+{
+    date: { start: "Mar 2024", end: "Hoy" },
+    title: "Profesional Lider IT",
+    company: "Corparques - Mundo Aventura",
+    location: "Bogotá, Colombia",
+    description:
+      "Desarrollador fullstack .NET C# - JavaScript para sistema CORE, nuevas funcionalidades, integración de perifericos y desarrollo para POS.",
+  },
   {
-    date: { start: "Jun 2021", end: "Hoy" },
+    date: { start: "Jun 2021", end: "Feb 224" },
     title: "Programador Freelance",
     company: "Freelance",
     location: "Bogotá, Colombia",
@@ -41,14 +49,14 @@ const EXPERIENCE = [
 ---
 
 <div class={`${className}`}>
-  <h3
+  <h2
     class={`
     flex items-center justify-center gap-x-2 text-4xl font-semibold py-4 text-gray-700
     lg:justify-start
     dark:text-white`}
   >
     <ToolIcon class="size-8" /> Experiencia
-  </h3>
+  </h2>
   <ol class={`relative border-s border-gray-200 dark:border-gray-700 ml-3`}>
     {
       EXPERIENCE.map((experience) => (
